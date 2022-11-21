@@ -4,7 +4,7 @@ let listaSamochodow = [("Opel", ("astra",1999)); ("Renault", ("megane", 2004)); 
 let znajdzSamochod list wartosc =
   let rec count xs res ={
       if xs=[]
-         else fold_Left 0 
+         else fold_left (fun x -> {if x = (List.hd xs) then _+1 else _+0}) 0 xs
     let rec findInList elem xss acc =
       match xss with
         h::t when h=elem -> findInList elem (List.tl xss) acc+1
