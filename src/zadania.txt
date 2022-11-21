@@ -1,0 +1,34 @@
+Zad. 1. [2p] Zdefiniować w Scala typ Plec określający dwie płcie
+ oraz typ Status_osoby umożliwiający pamiętanie wartości Dziecko, Uczen, Student, Pracownik, Emeryt.
+ Następnie zdefiniować funkcję, która na podstawie krotki zawierającej
+ nazwisko osoby, imię osoby, płeć osoby typu Plec, wiek osoby oraz miejsce pracy określa jej status.
+ Przyjąć, że wiek dziecka to 0 do 6 lat, wiek ucznia to 7 do 19 lat (gdy pracuje nie jest uczniem),
+ wiek studenta to 20 do 25 lat (gdy pracuje to nie jest studentem),
+ wiek pracownika to 26 do 60 lub 65 lat w zależności od płci
+ a wiek emeryta to powyżej 60 lub 65 lat w zależności od płci.
+
+Zad. 2. [3p] Zdefiniować w OCaml typ samochód będący aliasem do krotki reprezentującej markę,
+model i rocznik samochodu. Dla tak określonego typu zdefiniować listę elementów tego typu o zawartości
+((Opel, astra, 1999), (Renault, megane, 2004), (Opel, corsa, 2009), (Nissan, micra, 2004)),
+(Opel, corsa, 2009), (Nissan, micra, 2004)).
+Wykorzystując odpowiednie funkcjonały napisać funkcję typu
+samochod list ->int ->(string*(string*int)) list
+zwracającą listę krotek (marka, (model, liczba wystąpień modelu))
+dla rocznika zadanego parametrem (nie wyświetlać krotek z liczbą wystąpień 0).
+
+Zad. 3. [5p] Zdefiniować w Scala drzewo elementów dowolnego typu, w którym występują tylko węzły i wartości (wartość oznacza koniec gałęzi drzewa) a następnie napisać funkcję, która przepisuje w porządku postfiksowym zbudowane drzewo do listy heterogenicznej złożonej z dwóch rodzajów elementów: rodzaju para zawierającego wartości ("Dana", etykieta), gdzie etykieta oznacza pamiętaną w drzewie wartość  i rodzaju łańcuch znaków zawierającego charakterystykę rodzaju węzła (np. "Wezel (lewo, element)").
+
+Przykład drzewa do zadania:
+                            .
+                          /   \
+                         .     3
+                       /   \
+                      .     .
+                    /   \    \
+                   2     1    4
+
+Rozwiązanie dla powyższego drzewa:
+
+List(P((Dana,2)), P((Dana,1)), S(Wezel (element, element)),
+     P((Dana,4)), S(Wezel (element)), S(Wezel (lewo,prawo)),
+     P((Dana,3)), S(Wezel (lewo,element)))
