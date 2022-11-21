@@ -16,7 +16,12 @@ samochod list ->int ->(string*(string*int)) list
 zwracającą listę krotek (marka, (model, liczba wystąpień modelu))
 dla rocznika zadanego parametrem (nie wyświetlać krotek z liczbą wystąpień 0).
 
-Zad. 3. [5p] Zdefiniować w Scala drzewo elementów dowolnego typu, w którym występują tylko węzły i wartości (wartość oznacza koniec gałęzi drzewa) a następnie napisać funkcję, która przepisuje w porządku postfiksowym zbudowane drzewo do listy heterogenicznej złożonej z dwóch rodzajów elementów: rodzaju para zawierającego wartości ("Dana", etykieta), gdzie etykieta oznacza pamiętaną w drzewie wartość  i rodzaju łańcuch znaków zawierającego charakterystykę rodzaju węzła (np. "Wezel (lewo, element)").
+Zad. 3. [5p] Zdefiniować w Scala drzewo elementów dowolnego typu, w którym występują tylko węzły
+i wartości (wartość oznacza koniec gałęzi drzewa) a następnie napisać funkcję,
+która przepisuje w porządku postfiksowym zbudowane drzewo do listy heterogenicznej
+złożonej z dwóch rodzajów elementów: rodzaju para zawierającego wartości ("Dana", etykieta),
+gdzie etykieta oznacza pamiętaną w drzewie wartość  i rodzaju łańcuch znaków zawierającego
+charakterystykę rodzaju węzła (np. "Wezel (lewo, element)").
 
 Przykład drzewa do zadania:
                             .
