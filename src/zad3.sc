@@ -36,7 +36,7 @@ def treeToList[A, B](input:BT[A]):List[AB[A, B]] = {
           case Node('.', Node('.', x, y), Node('.', z, w)) => treeToList_rec(Node('.', x, y), Node('.', z, w) :: queue, res)
       }
       case List() if tree==Empty => res.reverse
-      case List(Node('.', x, y),_) if x.isInstanceOf[BT[A]] => treeToList_rec(Node('.', x, y), queue.tail, res)
+      case List(Node('.', x, y),_) => treeToList_rec(Node('.', x, y), queue.tail, res)
       case List(x, _) if tree==Empty => treeToList_rec(Empty, queue.tail, x::res)
   }
   treeToList_rec(input, List(), List())
