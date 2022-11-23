@@ -25,8 +25,12 @@ val t = Node('.', Node('.', Node('.', Element(2), Element(1)), Node('.', Empty, 
 def treeToList[A, B](input:BT[A]):List[AB[A, B]] = {
   @tailrec
   def treeToList_rec[A, B](tree:BT[A], queue:List[AB[A,B]|BT[A]], res:List[AB[A,B]]):List[AB[A, B]]={
+    //println(tree);
+    //println(queue)
+    //println(res)
     queue match
-      case _ if tree==Node =>{
+      case _ if tree.isInstanceOf[Node[A]] =>{
+        //println("case1")
         tree match
           case Node('.', Element(x), Empty) => treeToList_rec(Empty, queue, (S("Node element") :: P("Element", x) :: res))
           case Node('.', Empty, Element(x)) => treeToList_rec(Empty, queue, S("Node element") :: P("Element", x) :: res)
@@ -35,7 +39,7 @@ def treeToList[A, B](input:BT[A]):List[AB[A, B]] = {
           case Node('.', Element(z), Node('.', x, y)) => treeToList_rec(Node('.', x, y), P("Element", z) :: S("Node element right") :: queue, res)
           case Node('.', Node('.', x, y), Node('.', z, w)) => treeToList_rec(Node('.', x, y), Node('.', z, w) :: queue, res)
       }
-      case queue if queue.isEmpty && tree==Empty => res.reverse
+      case _ if queue.isEmpty && tree==Empty => res.reverse
       case List(Node('.', x, y):BT[A@unchecked],_*) => treeToList_rec(Node('.', x, y), queue.tail, res)
       case List(x:AB[A@unchecked,B@unchecked], _*) if tree==Empty => treeToList_rec(Empty, queue.tail, x::res)
   }
